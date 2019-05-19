@@ -11,7 +11,7 @@ class Profile(models.Model):
         self.save()
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'articles/', blank = True)
+    image = models.ImageField(upload_to = 'articles/')
     image_name = models.CharField(max_length =50)
     image_caption = models.CharField(max_length =50)
     profile = models.ForeignKey(Profile)
