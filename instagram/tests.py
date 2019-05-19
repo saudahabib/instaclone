@@ -5,10 +5,28 @@ from .models import Image, Profile
 class ImageTestClass(TestCase):
     '''Set up test object'''
     def setUp(self):
-        self.image = Image(image ="" , image_name = "cute", image_caption="feelin cute" , likes = "3", comments = "wow, lookin fresh af")
 
+        '''creating a new profile and saving it'''
+        self.profile = Profile(profile_photo="", bio="queen ui")
+        self.profile.save_profile()
+        
+        '''creating a new post and saving it'''
+        self.image = Image(image ="" , image_name = "cute", image_caption="feelin cute" ,profile=self.profile,likes = "3", comments = "wow, lookin fresh af")
+        self.image.save()
+
+    def tearDown(self):
+        Image.objects.all().delete()
+        Profile.objects.all().delete()
+
+    '''Test to check instance created'''
     def test_instance(self):
         self.assertTrue(isinstance(self.image, Image))
+
+    '''Test to check if save function works'''
+    def test_save_post(self):
+        self.image.save_post()
+        posts = Image.objects.all()
+        self.assertTrue(len(posts)>0)
 
 
 class ProfileTestClass(TestCase):
