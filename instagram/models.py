@@ -24,3 +24,7 @@ class Image(models.Model):
     '''save function'''
     def save_post(self):
         self.save()
+
+    '''delete function'''
+    def delete_post(self):
+        self.delete()

@@ -9,7 +9,7 @@ class ImageTestClass(TestCase):
         '''creating a new profile and saving it'''
         self.profile = Profile(profile_photo="", bio="queen ui")
         self.profile.save_profile()
-        
+
         '''creating a new post and saving it'''
         self.image = Image(image ="" , image_name = "cute", image_caption="feelin cute" ,profile=self.profile,likes = "3", comments = "wow, lookin fresh af")
         self.image.save()
@@ -28,7 +28,13 @@ class ImageTestClass(TestCase):
         posts = Image.objects.all()
         self.assertTrue(len(posts)>0)
 
+    '''test to check if delete function works'''
+    def test_delete_post(self):
+        self.image.delete_post()
+        posts = Image.objects.all()
+        self.assertTrue(len(posts)==0)
 
+    
 class ProfileTestClass(TestCase):
     '''Set up profile object'''
     def setUp(self):
