@@ -1,1 +1,23 @@
-<h1>Hey there fellas!</h1>
+{%extends 'all-posts/base.html'%}
+
+{% block content %}
+{{block.super}}
+  <h1>Hey there fellas!</h1>
+
+
+  <div class="card" style="width: 18rem;">
+
+    <div class="card-header">
+      <h5 class="card-title">Card title</h5>
+    </div>
+    <img src="https://images.pexels.com/photos/1282270/pexels-photo-1282270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="dummy" width="100%">
+
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+      </ul>
+    </div>
+  </div>
+
+
+{% endblock %}
