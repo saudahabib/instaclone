@@ -15,3 +15,16 @@ body{
   .hide{
     color: black;
   }
+
+.text-muted{
+  display: none;
+}
+.panel-body{
+  border: 2px solid red;
+}
+.form{
+  border: 2px solid red;
+}
+.head{
+  font-family: 'Lobster Two', sans-serif;
+}
