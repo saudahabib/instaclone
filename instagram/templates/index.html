@@ -18,7 +18,7 @@
           <div class="card-body">
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><i class="far fa-comment"></i>      <i class="far fa-heart"></i></li>
-              <li class="list-group-item"><b>saudahabib:</b> {% autoescape on%}{{post.image_caption}}{% endautoescape %}</li>
+              <li class="list-group-item"><b>saudahabib:</b> {% autoescape on%}{{post.image_caption|safe}}{% endautoescape %}</li>
 
             </ul>
           </div>
