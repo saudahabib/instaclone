@@ -1,7 +1,7 @@
 from .models import Image
+from django import forms
 
-class NewPostForm(form.ModelForm):
+class NewPostForm(forms.ModelForm):
     class Meta:
         model = Image
         exclude = ['likes', 'comments', 'profile']
-        

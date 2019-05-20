@@ -5,7 +5,7 @@ from tinymce.models import HTMLField
 class Profile(models.Model):
     profile_photo= models.ImageField(upload_to = 'articles/', blank = True)
     bio=models.CharField(max_length =50)
-
+    username = models.CharField(max_length=30)
 
     def __str__(self):
         return self.bio
@@ -14,9 +14,9 @@ class Profile(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to = 'articles/')
-    image_name = HTMLField()
+    image_name = models.CharField(max_length=30)
     image_caption = HTMLField()
-    profile = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     likes = models.CharField(max_length =50)
     comments = models.CharField(max_length =50)
 
@@ -42,3 +42,5 @@ class Image(models.Model):
     def search_by_image_name(cls, search_term):
         posts = cls.objects.filter(image_name__icontains=search_term)
         return posts
+    class Meta:
+        ordering=["-id"]

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Image
 from .forms import NewPostForm
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 '''welcome view to process landing page'''
 def welcome(request):
@@ -28,7 +28,7 @@ def new_post(request):
         form = NewPostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
-            post.editor = current_user
+            post.profile=current_user
             post.save()
         return redirect('welcome')
 
