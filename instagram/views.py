@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Image
-from .forms import NewPostForm
+from .forms import NewPostForm, NewProfileForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 '''welcome view to process landing page'''
@@ -35,3 +35,19 @@ def new_post(request):
     else:
         form = NewPostForm()
     return render(request, 'new_article.html', {"form": form})
+
+@login_required(login_url='/accounts/login/')
+def new_profile(request):
+    current_user = request.user
+    posts = Image.objects.filter(profile=current_user)
+    if request.method == 'POST':
+        form = NewProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.profile=current_user
+            profile.save()
+        return redirect('profile-page')
+
+    else:
+        form = NewProfileForm()
+    return render(request, 'profile-page.html', {"posts":posts})

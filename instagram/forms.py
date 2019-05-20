@@ -1,4 +1,4 @@
-from .models import Image
+from .models import Image, Profile
 from django import forms
 
 class NewPostForm(forms.ModelForm):
@@ -6,6 +6,7 @@ class NewPostForm(forms.ModelForm):
         model = Image
         exclude = ['likes', 'comments', 'profile']
 
-class NewProfileForm(form.ModelForm):
+class NewProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
+        exclude = ['user_id']
