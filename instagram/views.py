@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Image
+from .forms import NewPostForm
+
 # Create your views here.
 '''welcome view to process landing page'''
 def welcome(request):
@@ -17,3 +19,19 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-posts/search.html',{"message":message})
+
+'''function to enable user to post'''
+@login_required(login_url='/accounts/login/')
+def new_post(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.editor = current_user
+            post.save()
+        return redirect('welcome')
+
+    else:
+        form = NewPostForm()
+    return render(request, 'new_article.html', {"form": form})
