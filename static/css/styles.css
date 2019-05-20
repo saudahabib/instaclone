@@ -7,3 +7,11 @@ body{
   font-family: 'Lobster Two';
   font-size: x-large;
 }
+
+.hide{
+  color:yellow;
+}
+@media screen and(max-width:900px){
+  .hide{
+    color: black;
+  }
