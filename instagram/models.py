@@ -5,6 +5,7 @@ class Profile(models.Model):
     profile_photo= models.ImageField(upload_to = 'articles/', blank = True)
     bio=models.CharField(max_length =50)
 
+
     def __str__(self):
         return self.bio
     def save_profile(self):
@@ -34,3 +35,9 @@ class Image(models.Model):
     '''delete function'''
     def delete_post(self):
         self.delete()
+
+    '''search by image_name'''
+    @classmethod
+    def search_by_image_name(cls, search_term):
+        posts = cls.objects.filter(image_name__icontains=search_term)
+        return posts
