@@ -15,27 +15,25 @@
 
   {% if posts %}
     {% for post in posts %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{post.title}}</h1>
-      </div>
+    <div class="row">
+      <div class="card" style="width: 50rem;">
+
+        <div class="card-header">
+          <h5 class="card-title">{{post.image_name}}</h5>
+        </div>
+        <img src="{{post.image.url}}" class="card-img-top" alt="dummy" width="100%">
+
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="far fa-comment"></i>      <i class="far fa-heart"></i></li>
+            <li class="list-group-item"><b>saudahabib:</b> {{post.image_caption}}</li>
+          </ul>
+        </div>
+      </div><br>
+    </div>
     {% endfor %}
   {% endif %}
   </div>
-  <div class="row">
-    <div class="card" style="width: 50rem;">
 
-      <div class="card-header">
-        <h5 class="card-title">{{post.image_name}}</h5>
-      </div>
-      <img src="{{post.image.url}}" class="card-img-top" alt="dummy" width="100%">
-
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-comment"></i>      <i class="far fa-heart"></i></li>
-          <li class="list-group-item"><b>saudahabib:</b> {{post.image_caption}}</li>
-        </ul>
-      </div>
-    </div><br>
-  </div>
 </div>
 {% endblock %}
