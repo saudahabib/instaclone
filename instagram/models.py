@@ -21,6 +21,12 @@ class Image(models.Model):
     def __str__(self):
         return self.image_name
 
+    '''return objects on database'''
+    @classmethod
+    def images_all(cls):
+        posts = Image.objects.all()
+        return posts
+
     '''save function'''
     def save_post(self):
         self.save()
