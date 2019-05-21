@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Image
+from .models import Image, Profile
 from .forms import NewPostForm, NewProfileForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -39,7 +39,8 @@ def new_post(request):
 @login_required(login_url='/accounts/login/')
 def new_profile(request):
     current_user = request.user
-    posts = Image.objects.filter(profile=current_user)
+
+    posts = Profile.objects.filter(bio=current_user)
     if request.method == 'POST':
         form = NewProfileForm(request.POST, request.FILES)
         if form.is_valid():
@@ -51,3 +52,6 @@ def new_profile(request):
     else:
         form = NewProfileForm()
     return render(request, 'profile-page.html', {"posts":posts})
+
+def all_profiles(request):
+    0

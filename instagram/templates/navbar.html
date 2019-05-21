@@ -6,9 +6,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
+
       <div class="">
         <div class="col-sm-6 col-md-6">
               {% if user.is_authenticated %}
@@ -47,9 +45,12 @@
         <a class="nav-link" href="#"><i class="far fa-user fa-lg"></i></a>
       </li> -->
     </ul>
+<div class="search">
+
+</div>
     <form class="form-inline my-2 my-lg-0 navbar-form" role="search" action="{% url 'search_results' %}">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="image_name">
-      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2 search_bar text-center" type="search" placeholder="Search" aria-label="Search" name="image_name">
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit" style="display:none">Search</button>
     </form>
 
 </nav>

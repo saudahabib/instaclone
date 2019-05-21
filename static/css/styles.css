@@ -25,6 +25,8 @@ body{
 .form{
   border: 2px solid red;
 }
-.head{
-  font-family: 'Lobster Two', sans-serif;
+.form{
+  font-weight: bold;
+  border: 2px solid yellow;
+  padding-top: 2em !important;
 }

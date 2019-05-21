@@ -2,4 +2,29 @@
 
 {% block content %}
 {{block.super}}
+
+<div class="container">
+  <!-- <div class="row">
+    <p>nothing here</p>
+
+
+    {% for post in posts %}
+    <div class="col-md-6 col-sm-5">
+      show
+      <img src="{{post.profile_photo.url}}" alt="heck">
+      <p>{{post.bio}}</p>
+    </div>
+    <div class="col-md-6 col-sm-7">
+      <p>nothing here</p>
+    </div>
+    {% endfor %}
+  </div> -->
+  {% if user.is_authenticated %}
+  {{user.username}}
+  <br>
+  
+  <img src="{{user.profile.profic_pic.url}}" alt="show">
+  {% endif %}
+</div>
+
 {% endblock %}
