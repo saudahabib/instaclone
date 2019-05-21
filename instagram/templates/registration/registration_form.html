@@ -6,18 +6,25 @@
     <div class="col-md-8">
       <img src="https://i0.wp.com/twelveonedesign.com/wp-content/uploads/2017/05/instagram-mockup.png" width="100%"  alt="masimu">
     </div>
-    <div class="col-md-4 form" style="margin-top:2em">
+    <div style="padding:7%" class="col-md-4 mt-4 form">
 
-        <form class='form' action="/accounts/register/" method="post">
-          {% csrf_token %}
-          {% bootstrap_form form layout='inline'%}
-          <div class="form-group">
-            <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
-          </div>
+        <div class="row">
+          <form  action="/accounts/register/" method="post" style="border: 2px solid lightgrey; padding:7%; background-color:white;">
+            <h4 style="font-family:'Lobster Two', sans-serif;" class="text-center">Instapic</h4>
+            {% csrf_token %}
+            {% bootstrap_form form layout='inline'%}
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
+            </div>
 
-          <input type="hidden" name="next" value="{{next}}">
+            <input type="hidden" name="next" value="{{next}}">
 
-        </form>
+          </form>
+
+        </div><br><br>
+        <div class="row" style="border: 2px solid lightgrey; padding:7%; background-color:white;">
+          <p>Already have an account? <a href="/accounts/login">Login</a></p>
+        </div>
 
     </div>
   </div>

@@ -9,24 +9,26 @@ body{
 }
 
 .hide{
-  color:yellow;
+
+  overflow-y: scroll;
+  height:200px;
+
 }
 @media screen and(max-width:900px){
   .hide{
     color: black;
   }
-
+}
 .text-muted{
   display: none;
 }
 .panel-body{
   border: 2px solid red;
 }
-.form{
-  border: 2px solid red;
+.work{
+  height: 600px;
+  overflow-y: scroll;
 }
-.form{
-  font-weight: bold;
-  border: 2px solid yellow;
-  padding-top: 2em !important;
+.work::-webkit-scrollbar{
+  display: none;
 }

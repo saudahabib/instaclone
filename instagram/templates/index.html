@@ -1,17 +1,17 @@
-{%extends 'all-posts/base.html'%}
-
+{%extends 'base.html'%}
+{%load static%}
 {% block content %}
 {{block.super}}
 <br><br>
   <!-- posts from database come here -->
   <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-sm-3">
+    <div class="row " >
+      <div  class="col-md-8 col-sm-3 work" style="">
         {% for post in posts %}
         <div class="card" style="width: 40rem;">
 
           <div class="card-header">
-            <h5 class="card-title">{{post.image_name}}</h5>
+            <h5 id='red' class="card-title">{{post.image_name}}</h5>
           </div>
           <img src="{{post.image.url}}" class="card-img-top img-fluid" alt="dummy" width="100%">
 
@@ -30,9 +30,40 @@
           </div>
         {% endfor %}
       </div>
-      <div class="col-md-4 hide">
-
-
+      <div class="col-md-4 ">
+        <div class="row">
+          <img src="https://images.pexels.com/photos/1282270/pexels-photo-1282270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" height="50px" width="50px" class="rounded-circle"> {{user.username}}
+        </div><br>
+          <div class="row">
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                Stories
+              </div>
+              <ul class="list-group list-group-flush hide">
+                <li class="list-group-item">saudahabib</li>
+                <li class="list-group-item">tilanhannah</li>
+                <li class="list-group-item">hubbabubba</li>
+                <li class="list-group-item">hubbabubba</li>
+                <li class="list-group-item">hubbabubba</li>
+                <li class="list-group-item">hubbabubba</li>
+              </ul>
+            </div>
+          </div><br><br>
+          <div class="row">
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                Suggestions for you
+              </div>
+              <ul class="list-group list-group-flush hide">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">hubbabubba</li>
+                <li class="list-group-item">hubbabubba</li>
+                <li class="list-group-item">hubbabubba</li>
+              </ul>
+            </div>
+          </div>
       </div>
     </div>
 
