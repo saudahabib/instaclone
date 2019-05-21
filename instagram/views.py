@@ -45,7 +45,12 @@ def new_profile(request):
             profile = form.save(commit=False)
             profile.username = current_user
             profile.save()
-        return redirect('welcome')
+        return redirect('profile')
     else:
         form = NewsProfileForm()
-    return render(request, 'profile-page.html', {"form":form})
+    return render(request, 'new-profile.html', {"form":form})
+
+def profile(request):
+    current_user = request.user
+    profile = Profile.objects.get(username=current_user)
+    return render(request, 'profile-page.html',{"profile":profile})

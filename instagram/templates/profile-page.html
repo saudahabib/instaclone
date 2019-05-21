@@ -1,30 +1,32 @@
-{%extends 'all-posts/base.html'%}
-
+{%extends 'base.html'%}
+{%load static%}
 {% block content %}
 {{block.super}}
 
-<div class="container">
-  <!-- <div class="row">
-    <p>nothing here</p>
-
-
-    {% for post in posts %}
-    <div class="col-md-6 col-sm-5">
-      show
-      <img src="{{post.profile_photo.url}}" alt="heck">
-      <p>{{post.bio}}</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <img src="{{profile.profile_photo.url}}" alt="bikcha" width="150px" height="150px" class="rounded-circle">
+      </div>
+      <div class="col-md-6 col-sm-12">
+      <div class="yass">
+        <div class="ok">
+          {{profile.username}}
+        </div>
+        <div class="button">
+          <a href="#"><button type="button" name="button" class="bg-light">Edit profile</button></a>
+        </div>
+        <div class="cog">
+          <i class="fas fa-cog"></i>
+        </div>
+      </div>
+    {{profile.bio}}
+      </div>
     </div>
-    <div class="col-md-6 col-sm-7">
-      <p>nothing here</p>
+    <div class="row">
+
     </div>
-    {% endfor %}
-  </div> -->
-  {% if user.is_authenticated %}
-  {{user.username}}
-  <br>
-  
-  <img src="{{user.profile.profic_pic.url}}" alt="show">
-  {% endif %}
-</div>
+  </div>
+
 
 {% endblock %}

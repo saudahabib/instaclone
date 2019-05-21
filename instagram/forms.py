@@ -6,7 +6,7 @@ class NewPostForm(forms.ModelForm):
         model = Image
         exclude = ['likes', 'comments', 'profile']
 
-class NewProfileForm(forms.ModelForm):
+class NewsProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ['user_id']

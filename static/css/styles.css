@@ -32,3 +32,9 @@ body{
 .work::-webkit-scrollbar{
   display: none;
 }
+
+.yass{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
