@@ -20,7 +20,7 @@ class Image(models.Model):
     profile = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     likes = models.CharField(max_length =50)
     comments = models.CharField(max_length =50)
-
+    
     def __str__(self):
         return self.image_name
 

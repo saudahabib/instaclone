@@ -8,7 +8,7 @@
     <div class="row " >
       <div  class="col-md-8 col-sm-3 work" style="">
         {% for post in posts %}
-        <div class="card" style="width: 40rem;">
+        <div class="photo card">
 
           <div class="card-header">
             <h5 id='red' class="card-title">{{post.image_name}}</h5>
@@ -30,23 +30,22 @@
           </div>
         {% endfor %}
       </div>
-      <div class="col-md-4 ">
+      <div class="col-md-4 responsive ">
         <div class="row">
-          <img src="https://images.pexels.com/photos/1282270/pexels-photo-1282270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" height="50px" width="50px" class="rounded-circle"> {{user.username}}
+          <img src="{{profile.profile_photo.url}}" alt="hamna" height="50px" width="50px" class="rounded-circle"> <a href="{% url 'profile'%}"><p style="color:black;font-weight:bolder;text-decoration:none;"><b>{{user.username}}</b></p></a>
         </div><br>
           <div class="row">
             <div class="card" style="width: 18rem;">
               <div class="card-header">
                 Stories
               </div>
+
               <ul class="list-group list-group-flush hide">
-                <li class="list-group-item">saudahabib</li>
-                <li class="list-group-item">tilanhannah</li>
-                <li class="list-group-item">hubbabubba</li>
-                <li class="list-group-item">hubbabubba</li>
-                <li class="list-group-item">hubbabubba</li>
-                <li class="list-group-item">hubbabubba</li>
+                {% for user in users %}
+                <li class="list-group-item responsive">{{user.username}}</li>
+                {%endfor%}
               </ul>
+
             </div>
           </div><br><br>
           <div class="row">
@@ -55,12 +54,10 @@
                 Suggestions for you
               </div>
               <ul class="list-group list-group-flush hide">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">hubbabubba</li>
-                <li class="list-group-item">hubbabubba</li>
-                <li class="list-group-item">hubbabubba</li>
+                {% for user in views %}
+                <li class="list-group-item responsive">{{user.username}}
+                  <a href="/profile/user/{{user.id}}"><button type="button" name="button">View profile</button></a></li>
+                {%endfor%}
               </ul>
             </div>
           </div>
@@ -68,67 +65,4 @@
     </div>
 
   </div>
-
-  <!-- and end here -->
-
-    <!-- <div class="card" style="width: 50rem;">
-
-      <div class="card-header">
-        <h5 class="card-title">Saudahabib</h5>
-      </div>
-      <img src="https://images.pexels.com/photos/1282270/pexels-photo-1282270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="dummy" width="100%">
-
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-comment"></i>      <i class="far fa-heart"></i></li>
-          <li class="list-group-item"><b>saudahabib:</b> No caption. Just feelin cute today!</li>
-        </ul>
-      </div>
-    </div><br>
-    <div class="card" style="width: 50rem;">
-
-      <div class="card-header">
-        <h5 class="card-title">Saudahabib</h5>
-      </div>
-      <img src="https://images.pexels.com/photos/1282270/pexels-photo-1282270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="dummy" width="100%">
-
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-comment"></i>      <i class="far fa-heart"></i></li>
-          <li class="list-group-item"><b>saudahabib:</b> No caption. Just feelin cute today!</li>
-        </ul>
-      </div>
-    </div><br>
-    <div class="card" style="width: 50rem;">
-
-      <div class="card-header">
-        <h5 class="card-title">Saudahabib</h5>
-      </div>
-      <img src="https://images.pexels.com/photos/1282270/pexels-photo-1282270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="dummy" width="100%">
-
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-comment"></i>      <i class="far fa-heart"></i></li>
-          <li class="list-group-item"><b>saudahabib:</b> No caption. Just feelin cute today!</li>
-        </ul>
-      </div>
-    </div><br>
-    <div class="card" style="width: 50rem;">
-
-      <div class="card-header">
-        <h5 class="card-title">Saudasalim</h5>
-      </div>
-      <img src="https://images.pexels.com/photos/1282270/pexels-photo-1282270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="dummy" width="100%">
-
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-comment"></i>      <i class="far fa-heart"></i></li>
-          <li class="list-group-item"><b>saudasalim:</b> No caption. Just feelin cute today!</li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
-
-
-
 {% endblock %}

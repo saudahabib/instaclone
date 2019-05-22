@@ -1,5 +1,5 @@
 body{
-  background-color: ivory;
+  background-color: #fafafa;
   font-family: 'Nunito', sans-serif;
 }
 
@@ -14,7 +14,7 @@ body{
   height:200px;
 
 }
-@media screen and(max-width:900px){
+@media screen and (max-width:900px){
   .hide{
     color: black;
   }
@@ -37,4 +37,20 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.rounded-circle{
+  border: 1px solid red;
+}
+.photo{
+  width: 40rem;
+}
+
+@media only screen and (max-width:900px){
+  .responsive{
+    display: none;
+  }
+  .photo{
+    width: 100%;
+  }
 }
