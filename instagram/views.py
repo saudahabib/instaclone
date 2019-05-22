@@ -70,3 +70,6 @@ def view_users(request, user_id):
     users=User.objects.filter(id=user_id).all()
 
     return render(request, "other.html", {"photos":my_photos, "profile":profile_pic, "users":users})
+
+def login_page(request):
+    return render(request, 'come.html')
