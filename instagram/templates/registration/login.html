@@ -2,40 +2,90 @@
 {% load bootstrap4 %}
 {% block content %}
 
-<div class="container head">
-  <div class="row">
-    <div class="col-md-8">
-      <img src="https://i0.wp.com/twelveonedesign.com/wp-content/uploads/2017/05/instagram-mockup.png" width="100%"  alt="masimu">
-    </div>
-    <div" class="col-md-4 mt-4 form">
+<div class="container ">
+<div class="row">
+  <div class="col-md-3">
 
-        <div class="row">
-          <form  action="/accounts/login/" method="post" style="border: 2px solid lightgrey; padding:10%; background-color:white;">
-              <h4 style="font-family:'Lobster Two', sans-serif;" class="text-center">Instapic</h4>
-            {% csrf_token %}
-            {% bootstrap_form form %}
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-6 mt-5">
+        <img src="https://i0.wp.com/twelveonedesign.com/wp-content/uploads/2017/05/instagram-mockup.png" width="100%"  alt="masimu"><br> <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3mRq-Cifr8WeCxFrbE7kMWNCATGWky1Goku4UYIcWgRE3gOxpg" alt="playstore" width="41%"></a>   <a href="#"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Get_it_on_Google_play.svg/1200px-Get_it_on_Google_play.svg.png" alt="google" width="48%"></a>
+      </div>
+      <div class="col-md-6 mt-5">
+        <form  action="/accounts/login/" method="post" style="border: 2px solid lightgrey; padding:10%; background-color:white;" class="mt-5">
+            <h4 style="font-family:'Lobster Two', sans-serif;" class="text-center">Instapic</h4>
+          {% csrf_token %}
+          {% bootstrap_form form %}
 
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Login">
-            </div><div class="row" style="border: 2px solid lightgrey; padding:7%; background-color:white;">
-              <p>Don't have an account? <a href="/accounts/register">Sign Up</a></p>
-            </div>
-
-
-
-            <input type="hidden" name="next" value="{{next}}">
-
-
-            <div class="text-muted">
-              <p>Don't have an account? <a href="/accounts/register">Sign up here</a></p>
-            </div>
-          </form>
-        </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-sm" value="Login">
+          </div><div class="row" style="border: 2px solid lightgrey; padding:7%; background-color:white;">
+            <p>Don't have an account? <a href="/accounts/register">Sign Up</a></p>
+          </div>
 
 
+
+          <input type="hidden" name="next" value="{{next}}">
+
+
+          <div class="text-muted">
+            <p>Don't have an account? <a href="/accounts/register">Sign up here</a></p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+  <div class="col-md-1">
 </div>
+</div>
+
+
+<!--
+<div class="container head">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="https://i0.wp.com/twelveonedesign.com/wp-content/uploads/2017/05/instagram-mockup.png" width="100%"  alt="masimu">
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-3">
+
+      </div>
+
+      <div class="col-md-9 mt-4 form">
+
+          <div class="row">
+            <form  action="/accounts/login/" method="post" style="border: 2px solid lightgrey; padding:10%; background-color:white;" class="mt-5">
+                <h4 style="font-family:'Lobster Two', sans-serif;" class="text-center">Instapic</h4>
+              {% csrf_token %}
+              {% bootstrap_form form %}
+
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary btn-sm" value="Login">
+              </div><div class="row" style="border: 2px solid lightgrey; padding:7%; background-color:white;">
+                <p>Don't have an account? <a href="/accounts/register">Sign Up</a></p>
+              </div>
+
+
+
+              <input type="hidden" name="next" value="{{next}}">
+
+
+              <div class="text-muted">
+                <p>Don't have an account? <a href="/accounts/register">Sign up here</a></p>
+              </div>
+            </form>
+          </div>
+
+
+      </div>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+
+  </div>
+</div> -->
 
 
 
