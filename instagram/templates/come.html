@@ -2,7 +2,11 @@
 {%load static%}
 {% block content %}
 {{block.super}}
-
-<a href="accounts/login"><p class="text-center">Login Please</p></a>
+<div class="card">
+  <div class="card-body">
+    <h1><span class="weokam">Instapic</span></h1>
+    <a href="accounts/login"><button type="button" name="button" class="btn-btn-outline-danger">Click here to continue</button></a>
+  </div>
+</div>
 
 {%endblock%}

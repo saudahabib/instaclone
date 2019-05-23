@@ -3,7 +3,7 @@ body{
   font-family: 'Nunito', sans-serif;
 }
 
-.navbar-brand{
+.navbar-brand, .weokam{
   font-family: 'Lobster Two';
   font-size: x-large;
 }
