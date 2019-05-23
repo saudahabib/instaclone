@@ -17,6 +17,13 @@ body{
 @media screen and (max-width:900px){
   .hide{
     color: black;
+
+  }
+  .nosho{
+    display: none;
+    position: sticky;
+    width: 100%;
+    margin-top:0;
   }
 }
 .text-muted{
