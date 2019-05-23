@@ -14,6 +14,10 @@ body{
   height:200px;
 
 }
+.yu{
+  text-align: center;
+  font-family: 'Lobster Two', sans-serif;
+}
 @media screen and (max-width:900px){
   .hide{
     color: black;
